@@ -170,7 +170,7 @@ def process_all_items(data: List[Dict], model_name: str, language: str, max_work
     llm = ChatOpenAI(
             model=model_name,
             extra_body={"thinking": {"type": "disabled"}}
-        ).with_structured_output(Structure, method="function_calling")
+        ).with_structured_output(Structure, method="json_mode")
 
     print('Connect to:', model_name, file=sys.stderr)
     
